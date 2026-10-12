@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Willian Moreira | Desenvolvedor de Software, Filmmaker e Fotógrafo</title>
+<meta name="description" content="Portfólio de Willian Moreira: desenvolvimento web e mobile, audiovisual e fotografia." />
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#inicio" class="logo">willian<span>.dev</span></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="glow" id="glow"></div>
+  <div class="container hero-grid">
+    <div class="reveal">
+      <h1>Olá, eu sou<br />Willian Moreira.</h1>
+      <p class="role"><span id="typed">Desenvolvedor de Software</span><span class="caret"></span></p>
+      <p class="intro">Tenho 19 anos, sou de Videira-SC e uno lógica de programação com olhar artístico para criar aplicações web, mobile e experiências audiovisuais.</p>
+      <div class="cta">
+        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+        <a href="#contato" class="btn btn-ghost">Falar Comigo</a>
+      </div>
+    </div>
+    <div class="profile reveal" style="--d:.15s">
+      <!-- FOTO DE PERFIL: troque o caminho abaixo pela sua foto (ideal: vertical, 4:5) -->
+      <div class="img-frame"><img class="img-round" src="assets/willian.jpg" alt="Foto de perfil de Willian Moreira" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section id="sobre">
+  <div class="container">
+    <h2 class="reveal">Sobre mim</h2>
+    <p class="lead reveal">Código, câmera e música no mesmo lugar.</p>
+    <div class="bento">
+      <article class="card span-4 reveal">
+        <p class="about-text">Estudante de Ciência da Computação e Técnico em Informática pelo IFC Videira. Minha jornada na tecnologia passa por desenvolvimento full-stack, design e exploração de Inteligência Artificial com modelos locais (Ollama, Llama3, Claude). No CECOM (IFC), atuo na produção audiovisual e comunicação.</p>
+      </article>
+      <!-- IMAGEM LIFESTYLE 1: troque o caminho (ex.: você tocando, treinando, com o Bob) -->
+      <div class="card photo-card span-2 reveal" style="--d:.1s">
+        <img class="img-round" src="assets/will2.jpeg" alt="Willian em uma foto lifestyle" />
+      </div>
+      <!-- IMAGEM LIFESTYLE 2 -->
+      <div class="card photo-card span-2 reveal">
+        <img class="img-round" src="assets/bob.jpeg" alt="Willian com seu cachorro Bob" />
+      </div>
+      <article class="card span-4 reveal" style="--d:.1s">
+        <h3>Fora das telas</h3>
+        <ul class="facts">
+          <li><span><b>Música:</b> toco saxofone, flauta transversal e cajón na Banda Jovem Sol-lá-si.</span></li>
+          <li><span><b>Treino:</b> dedicado à hipertrofia, com disciplina de rotina.</span></li>
+          <li><span><b>Mentalidade:</b> me inspiro na filosofia estoica para produtividade.</span></li>
+          <li><span><b>Companhia:</b> o Bob, meu cachorro, que aprova (ou não) cada commit.</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HABILIDADES ============ -->
+<section id="habilidades">
+  <div class="container">
+    <h2 class="reveal">Habilidades e ferramentas</h2>
+    <p class="lead reveal">Do código à edição de vídeo, o que uso no dia a dia.</p>
+    <div class="bento">
+      <article class="card span-3 reveal">
+        <h3>Desenvolvimento</h3>
+        <p>Aplicações web e mobile, do banco de dados à interface.</p>
+        <div class="tags"><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">React Native</span><span class="tag">TypeScript</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">PHP</span><span class="tag">SQL</span></div>
+      </article>
+      <article class="card span-3 reveal" style="--d:.1s">
+        <h3>Infra e IA</h3>
+        <p>Ambientes em contêiner, versionamento e IA rodando localmente.</p>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Cloud</span><span class="tag">GitHub</span><span class="tag">Modelos IA Locais</span></div>
+      </article>
+      <article class="card span-6 reveal">
+        <h3>Audiovisual e Design</h3>
+        <p>Cobertura de eventos, edição, tratamento de imagem e identidade visual.</p>
+        <div class="tags"><span class="tag">Adobe Premiere</span><span class="tag">Lightroom</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">Canva</span><span class="tag">Fotografia</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJETOS ============ -->
+<section id="projetos">
+  <div class="container">
+    <h2 class="reveal">Projetos em destaque</h2>
+    <p class="lead reveal">Alguns trabalhos de pesquisa, extensão, eventos e produto.</p>
+    <div class="bento">
+
+      <!-- Em cada projeto: troque o src da thumbnail e o href do link do GitHub -->
+      <article class="card project span-3 reveal">
+        <div class="thumb"><img class="img-round" src="assets/wimo.png" alt="Thumbnail do projeto Wimo" /></div>
+        <div class="body">
+          <span class="where">Nascer SC</span>
+          <h3>Wimo</h3>
+          <p>Plataforma de suporte ao autismo, focada em gerenciamento de tarefas e bem-estar.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Supabase</span></div>
+          <a class="link" href="https://willian-hm.github.io/wimo-lp/" target="_blank" rel="noopener">Confira nossa landing page</a>
+        </div>
+      </article>
+
+      <article class="card project span-3 reveal" style="--d:.1s">
+        <div class="thumb"><img class="img-round" src="assets/fluxai.png" alt="Thumbnail do projeto FluxAI" /></div>
+        <div class="body">
+          <span class="where">Ideathon Engenharia Elétrica</span>
+          <h3>FluxAI</h3>
+          <p>Sistema automatizado de gestão de perdas de água, unindo CLPs e IA preditiva.</p>
+          <div class="tags"><span class="tag">CLP</span><span class="tag">IA Preditiva</span></div>
+          <a class="link" href="https://www.canva.com/design/DAHXwFSfYvk/_85-sju-9SfABfRVE5TkHA/edit" target="_blank" rel="noopener">Ver no Canva</a>
+        </div>
+      </article>
+
+      <article class="card project span-2 reveal">
+        <div class="thumb"><img class="img-round" src="assets/cajoo.png" alt="Thumbnail do projeto CAJOO" /></div>
+        <div class="body">
+          <h3>CAJOO</h3>
+          <p>Desenvolvimento de módulos da plataforma, autenticação e dashboard.</p>
+          <div class="tags"><span class="tag">Autenticação</span><span class="tag">Dashboard</span></div>
+          <a class="link" href="https://cajoo.fsw-ifc.brdrive.cloud" target="_blank" rel="noopener">Ver site oficial</a>
+        </div>
+      </article>
+
+      <article class="card project span-2 reveal" style="--d:.1s">
+        <div class="thumb"><img class="img-round" src="assets/rota.jpeg" alt="Thumbnail do projeto Rota do Código" /></div>
+        <div class="body">
+          <h3>Rota do Código</h3>
+          <p>Projeto de programação de jogos com GDevelop para a rede pública.</p>
+          <div class="tags"><span class="tag">GDevelop</span><span class="tag">Educação</span></div>
+          <a class="link" href="https://www.instagram.com/rotadocodigo.ifc/" target="_blank" rel="noopener">Mais sobre o projeto</a>
+        </div>
+      </article>
+
+      <article class="card project span-2 reveal" style="--d:.2s">
+        <div class="thumb"><img class="img-round" src="assets/labmaker.png" alt="Thumbnail do Portal LabMaker IFC" /></div>
+        <div class="body">
+          <h3>Portal LabMaker IFC</h3>
+          <p>Arquitetura e desenvolvimento de uma web wiki com várias páginas.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+          <a class="link" href="https://willian-hm.github.io/labmaker-ifc-videira/" target="_blank" rel="noopener">Ver o Projeto</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIÊNCIA E FORMAÇÃO ============ -->
+<section id="experiencia">
+  <div class="container">
+    <h2 class="reveal">Experiência e formação</h2>
+    <p class="lead reveal">Onde estudei e onde trabalho.</p>
+
+    <h3 class="t-group reveal">Experiência</h3>
+    <div class="timeline" style="margin-bottom:60px">
+      <div class="t-item reveal">
+        <span class="t-date">2026 - Atual</span>
+        <h3>Estagiário no CECOM, IFC Videira</h3>
+        <p>Cobertura audiovisual, comunicação e design. Também na equipe de organização da Semana Acadêmica de Computação e no staff do Startup Weekend Videira 2026.</p>
+      </div>
+    </div>
+
+    <h3 class="t-group reveal">Formação</h3>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <span class="t-date">2026 - Atual</span>
+        <h3>Ciência da Computação</h3>
+        <p>IFC Videira.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-date">Concluído em 2025</span>
+        <h3>Técnico Integrado em Informática</h3>
+        <p>IFC Videira.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="contact" id="contato">
+  <div class="container">
+    <h2 class="reveal">Vamos construir algo juntos?</h2>
+    <p class="lead reveal">Tem um projeto, uma ideia ou uma cobertura de evento? Me chama por onde preferir.</p>
+    <div class="links reveal">
+      <a class="btn btn-primary" href="mailto:willianmoreira0510@gmail.com">E-mail</a>
+      <a class="btn btn-ghost" href="https://wa.me/5549991280198" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/will-moreira" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/willian-hm" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">&copy; <span id="year"></span> Willian Moreira. Feito em Videira, SC.</div></footer>
+
+<script>
+/* Menu mobile */
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu');
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menu.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded', false);
+}));
+
+/* Navbar com fundo ao rolar */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+/* Scroll reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* Glow roxo que segue o mouse no hero */
+const hero = document.querySelector('.hero');
+hero.addEventListener('pointermove', (e) => {
+  const r = hero.getBoundingClientRect();
+  hero.style.setProperty('--gx', (e.clientX - r.left) + 'px');
+  hero.style.setProperty('--gy', (e.clientY - r.top) + 'px');
+});
+
+/* Subtítulo alternando */
+const roles = ['Desenvolvedor de Software', 'Filmmaker & Fotógrafo'];
+const typed = document.getElementById('typed');
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let r = 0, c = roles[0].length, del = true;
+  setTimeout(function tick() {
+    const word = roles[r];
+    c += del ? -1 : 1;
+    typed.textContent = word.slice(0, c);
+    let wait = del ? 35 : 70;
+    if (!del && c === word.length) { del = true; wait = 2200; }
+    else if (del && c === 0) { del = false; r = (r + 1) % roles.length; wait = 350; }
+    setTimeout(tick, wait);
+  }, 2200);
+} else {
+  typed.textContent = 'Desenvolvedor de Software | Filmmaker & Fotógrafo';
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
