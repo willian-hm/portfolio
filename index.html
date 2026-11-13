@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Willian Moreira | Desenvolvedor de Software, Filmmaker e Fotógrafo</title>
 <meta name="description" content="Portfólio de Willian Moreira: desenvolvimento web e mobile, audiovisual e fotografia." />
+<meta name="theme-color" content="#000000" />
 <link rel="icon" type="image/png" href="assets/icon.png">
+<script>
+(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<script>
+(function(){try{if(!location.hash&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!sessionStorage.getItem('intro-seen')){document.documentElement.classList.add('intro-pending');window.introFailsafe=setTimeout(function(){document.documentElement.classList.remove('intro-pending');document.getElementById('welcome-intro')?.remove();document.querySelectorAll('[data-intro-inert]').forEach(function(el){el.inert=false;el.removeAttribute('data-intro-inert')})},8000)}}catch(e){}})();
+</script>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- ============ NAVBAR ============ -->
 <header class="nav" id="nav">
@@ -20,11 +28,17 @@
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="#sobre">Sobre</a>
       <a href="#habilidades">Habilidades</a>
-      <a href="#projetos">Projetos</a>
+      <a href="projetos.html">Projetos</a>
       <a href="#experiencia">Experiência</a>
       <a href="#contato">Contato</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-tools">
+      <button class="theme-toggle" id="theme" type="button" aria-label="Alternar entre modo claro e escuro" aria-pressed="false">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -33,18 +47,43 @@
 <section class="hero" id="inicio">
   <div class="glow" id="glow"></div>
   <div class="container hero-grid">
-    <div class="reveal">
-      <h1>Olá, eu sou<br />Willian Moreira.</h1>
+    <div class="text reveal">
+      <span class="status"><i></i>Design, tecnologia e audiovisual</span>
+      <h1>Olá, eu sou<br /><span class="grad">Willian Moreira.</span></h1>
       <p class="role"><span id="typed">Desenvolvedor de Software</span><span class="caret"></span></p>
       <p class="intro">Tenho 19 anos, sou de Videira-SC e uno lógica de programação com olhar artístico para criar aplicações web, mobile e experiências audiovisuais.</p>
       <div class="cta">
-        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+        <a href="projetos.html" class="btn btn-primary">Ver Projetos</a>
         <a href="#contato" class="btn btn-ghost">Falar Comigo</a>
       </div>
     </div>
     <div class="profile reveal" style="--d:.15s">
       <!-- FOTO DE PERFIL: troque o caminho abaixo pela sua foto (ideal: vertical, 4:5) -->
-      <div class="img-frame"><img class="img-round" src="assets/willian.jpg" alt="Foto de perfil de Willian Moreira" /></div>
+      <div class="img-frame" id="tilt"><img class="img-round" src="assets/willian.jpeg" alt="Foto de perfil de Willian Moreira" /></div>
+      <a class="ig-chip" href="https://instagram.com/willian.rkn" target="_blank" rel="noopener" aria-label="Instagram de Willian, @willian.rkn (conta verificada)">
+        <span class="av"><img src="assets/willian.jpeg" alt="" /></span>
+        <span class="tx">
+          <b>willian.rkn
+            <svg class="verified" viewBox="0 0 24 24" role="img" aria-label="Conta verificada"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="#0095f6"/><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="#0095f6" transform="rotate(45 12 12)"/><path d="M8 12.4l2.7 2.7 5.5-5.7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </b>
+          <small>Instagram</small>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee" aria-label="Tecnologias e serviços">
+  <p class="m-label">Tecnologias e o que eu faço</p>
+  <div class="m-row">
+    <div class="m-track m-big">
+      <span>Node.js</span><span>React</span><span>React Native</span><span>TypeScript</span><span>Python</span><span>PHP</span><span>Docker</span><span>SQL</span><span>Next.js</span><span>Supabase</span><span>GDevelop</span><span>Premiere</span><span>Lightroom</span><span>Photoshop</span><span>Illustrator</span><span>Canva</span>
+    </div>
+  </div>
+  <div class="m-row rev">
+    <div class="m-track m-pill">
+      <span>Sites e landing pages</span><span>Aplicativos mobile</span><span>Sistemas web</span><span>Identidade visual</span><span>Cobertura de eventos</span><span>Fotografia</span><span>Edição de vídeo</span><span>Oficinas de programação</span><span>IA com modelos locais</span><span>Design gráfico</span>
     </div>
   </div>
 </section>
@@ -52,21 +91,22 @@
 <!-- ============ SOBRE ============ -->
 <section id="sobre">
   <div class="container">
+    <span class="eyebrow reveal">01 · Sobre</span>
     <h2 class="reveal">Sobre mim</h2>
     <p class="lead reveal">Código, câmera e música no mesmo lugar.</p>
-    <div class="bento">
-      <article class="card span-4 reveal">
-        <p class="about-text">Estudante de Ciência da Computação e Técnico em Informática pelo IFC Videira. Minha jornada na tecnologia passa por desenvolvimento full-stack, design e exploração de Inteligência Artificial com modelos locais (Ollama, Llama3, Claude). No CECOM (IFC), atuo na produção audiovisual e comunicação.</p>
+    <div class="about-layout">
+      <article class="about-story reveal">
+        <span class="about-kicker">DESENVOLVIMENTO &amp; CRIATIVIDADE</span><p class="about-text">Estudante de Ciência da Computação e Técnico em Informática pelo IFC Videira. Minha jornada na tecnologia passa por desenvolvimento full-stack, design e exploração de Inteligência Artificial com modelos locais (Ollama, Llama3, Claude). No CECOM (IFC), atuo na produção audiovisual e comunicação.</p>
       </article>
       <!-- IMAGEM LIFESTYLE 1: troque o caminho (ex.: você tocando, treinando, com o Bob) -->
-      <div class="card photo-card span-2 reveal" style="--d:.1s">
-        <img class="img-round" src="assets/will2.jpeg" alt="Willian em uma foto lifestyle" />
+      <div class="about-photo about-portrait reveal" style="--d:.1s">
+        <img class="img-round" src="assets/will2.jpg" alt="Willian em uma foto lifestyle" />
       </div>
       <!-- IMAGEM LIFESTYLE 2 -->
-      <div class="card photo-card span-2 reveal">
+      <div class="about-photo about-bob reveal">
         <img class="img-round" src="assets/bob.jpeg" alt="Willian com seu cachorro Bob" />
       </div>
-      <article class="card span-4 reveal" style="--d:.1s">
+      <article class="about-personal reveal" style="--d:.1s">
         <h3>Fora das telas</h3>
         <ul class="facts">
           <li><span><b>Música:</b> toco saxofone, flauta transversal e cajón na Banda Jovem Sol-lá-si.</span></li>
@@ -82,6 +122,7 @@
 <!-- ============ HABILIDADES ============ -->
 <section id="habilidades">
   <div class="container">
+    <span class="eyebrow reveal">02 · Habilidades</span>
     <h2 class="reveal">Habilidades e ferramentas</h2>
     <p class="lead reveal">Do código à edição de vídeo, o que uso no dia a dia.</p>
     <div class="bento">
@@ -107,13 +148,14 @@
 <!-- ============ PROJETOS ============ -->
 <section id="projetos">
   <div class="container">
+    <span class="eyebrow reveal">03 · Projetos</span>
     <h2 class="reveal">Projetos em destaque</h2>
-    <p class="lead reveal">Alguns trabalhos de pesquisa, extensão, eventos e produto.</p>
+    <p class="lead reveal">Alguns trabalhos de pesquisa, extensão, eventos e produto. Tem mais na página de projetos.</p>
     <div class="bento">
 
-      <!-- Em cada projeto: troque o src da thumbnail e o href do link do GitHub -->
+      <!-- Em cada projeto: troque o src da thumbnail e o href do link -->
       <article class="card project span-3 reveal">
-        <div class="thumb"><img class="img-round" src="assets/wimo.png" alt="Thumbnail do projeto Wimo" /></div>
+        <div class="thumb"><img class="img-round" src="assets/projetos/wimo.jpg" alt="Thumbnail do projeto Wimo" loading="lazy" /></div>
         <div class="body">
           <span class="where">Nascer SC</span>
           <h3>Wimo</h3>
@@ -124,7 +166,7 @@
       </article>
 
       <article class="card project span-3 reveal" style="--d:.1s">
-        <div class="thumb"><img class="img-round" src="assets/fluxai.png" alt="Thumbnail do projeto FluxAI" /></div>
+        <div class="thumb"><img class="img-round" src="assets/fluxai.png" alt="Thumbnail do projeto FluxAI" loading="lazy" /></div>
         <div class="body">
           <span class="where">Ideathon Engenharia Elétrica</span>
           <h3>FluxAI</h3>
@@ -135,7 +177,7 @@
       </article>
 
       <article class="card project span-2 reveal">
-        <div class="thumb"><img class="img-round" src="assets/cajoo.png" alt="Thumbnail do projeto CAJOO" /></div>
+        <div class="thumb"><img class="img-round" src="assets/projetos/cajoo.jpg" alt="Thumbnail do projeto CAJOO" loading="lazy" /></div>
         <div class="body">
           <h3>CAJOO</h3>
           <p>Desenvolvimento de módulos da plataforma, autenticação e dashboard.</p>
@@ -145,7 +187,7 @@
       </article>
 
       <article class="card project span-2 reveal" style="--d:.1s">
-        <div class="thumb"><img class="img-round" src="assets/rota.jpeg" alt="Thumbnail do projeto Rota do Código" /></div>
+        <div class="thumb"><img class="img-round" src="assets/rota.jpeg" alt="Thumbnail do projeto Rota do Código" loading="lazy" /></div>
         <div class="body">
           <h3>Rota do Código</h3>
           <p>Projeto de programação de jogos com GDevelop para a rede pública.</p>
@@ -155,7 +197,7 @@
       </article>
 
       <article class="card project span-2 reveal" style="--d:.2s">
-        <div class="thumb"><img class="img-round" src="assets/labmaker.png" alt="Thumbnail do Portal LabMaker IFC" /></div>
+        <div class="thumb"><img class="img-round" src="assets/projetos/labmaker.jpg" alt="Thumbnail do Portal LabMaker IFC" loading="lazy" /></div>
         <div class="body">
           <h3>Portal LabMaker IFC</h3>
           <p>Arquitetura e desenvolvimento de uma web wiki com várias páginas.</p>
@@ -165,21 +207,30 @@
       </article>
 
     </div>
+    <div class="more reveal">
+      <a href="projetos.html" class="btn btn-primary">Ver todos os projetos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
   </div>
 </section>
 
 <!-- ============ EXPERIÊNCIA E FORMAÇÃO ============ -->
 <section id="experiencia">
   <div class="container">
+    <span class="eyebrow reveal">04 · Experiência</span>
     <h2 class="reveal">Experiência e formação</h2>
     <p class="lead reveal">Onde estudei e onde trabalho.</p>
 
     <h3 class="t-group reveal">Experiência</h3>
-    <div class="timeline" style="margin-bottom:60px">
+    <div class="timeline" style="margin-bottom:40px">
       <div class="t-item reveal">
         <span class="t-date">2026 - Atual</span>
         <h3>Estagiário no CECOM, IFC Videira</h3>
         <p>Cobertura audiovisual, comunicação e design. Também na equipe de organização da Semana Acadêmica de Computação e no staff do Startup Weekend Videira 2026.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-date">Atual</span>
+        <h3>Projetos independentes</h3>
+        <p>Desenvolvo projetos sob medida de design, sites e cobertura de eventos.</p>
       </div>
     </div>
 
@@ -202,44 +253,44 @@
 <!-- ============ CONTATO ============ -->
 <section class="contact" id="contato">
   <div class="container">
-    <h2 class="reveal">Vamos construir algo juntos?</h2>
+    <span class="eyebrow reveal">05 · Contato</span>
+    <h2 class="reveal">Vamos construir <span class="grad">algo juntos?</span></h2>
     <p class="lead reveal">Tem um projeto, uma ideia ou uma cobertura de evento? Me chama por onde preferir.</p>
+    <button class="mail-copy reveal" type="button" data-copy="willianmoreira0510@gmail.com" aria-label="Copiar e-mail willianmoreira0510@gmail.com">
+      <span>willianmoreira0510@gmail.com</span>
+      <em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copiar</em>
+    </button>
     <div class="links reveal">
-      <a class="btn btn-primary" href="mailto:willianmoreira0510@gmail.com" onclick="window.setTimeout(function(){ alert('Se a sua aplicação de e-mail não abriu, copie o endereço: willianmoreira0510@gmail.com'); }, 2000);">E-mail</a>
+      <a class="btn btn-primary" href="mailto:willianmoreira0510@gmail.com">Enviar e-mail</a>
       <a class="btn btn-ghost" href="https://wa.me/5549991280198" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn btn-ghost" href="https://linkedin.com/in/will-moreira" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-ghost" href="https://github.com/willian-hm" target="_blank" rel="noopener">GitHub</a>
     </div>
+    <a class="ig-chip reveal" href="https://instagram.com/willian.rkn" target="_blank" rel="noopener" aria-label="Instagram de Willian, @willian.rkn (conta verificada)">
+      <span class="av"><img src="assets/willian.jpeg" alt="" loading="lazy" /></span>
+      <span class="tx">
+        <b>willian.rkn
+          <svg class="verified" viewBox="0 0 24 24" role="img" aria-label="Conta verificada"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="#0095f6"/><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="#0095f6" transform="rotate(45 12 12)"/><path d="M8 12.4l2.7 2.7 5.5-5.7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </b>
+        <small>Me segue no Instagram</small>
+      </span>
+    </a>
   </div>
 </section>
 </main>
 
 <footer><div class="container">&copy; <span id="year"></span> Willian Moreira. Feito em Videira, SC.</div></footer>
 
+<!-- WhatsApp flutuante -->
+<a class="wa-fab" href="https://wa.me/5549991280198?text=Ol%C3%A1%20Willian!%20Vi%20seu%20portf%C3%B3lio%20e%20queria%20conversar." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="tip">Chamar no WhatsApp</span>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="intro.js"></script>
+<script src="main.js"></script>
 <script>
-/* Menu mobile */
-const burger = document.getElementById('burger');
-const menu = document.getElementById('menu');
-burger.addEventListener('click', () => {
-  const open = menu.classList.toggle('open');
-  burger.classList.toggle('open', open);
-  burger.setAttribute('aria-expanded', open);
-});
-menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  menu.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded', false);
-}));
-
-/* Navbar com fundo ao rolar */
-const nav = document.getElementById('nav');
-const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
-onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-
-/* Scroll reveal */
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-}, {threshold:.12});
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
 /* Glow roxo que segue o mouse no hero */
 const hero = document.querySelector('.hero');
 hero.addEventListener('pointermove', (e) => {
@@ -248,10 +299,25 @@ hero.addEventListener('pointermove', (e) => {
   hero.style.setProperty('--gy', (e.clientY - r.top) + 'px');
 });
 
+/* Foto de perfil com leve inclinação 3D (só em dispositivos com mouse) */
+const tilt = document.getElementById('tilt');
+const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (fine && !calm) {
+  const box = tilt.parentElement;
+  box.addEventListener('pointermove', (e) => {
+    const r = box.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5;
+    const y = (e.clientY - r.top) / r.height - .5;
+    tilt.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+  });
+  box.addEventListener('pointerleave', () => { tilt.style.transform = ''; });
+}
+
 /* Subtítulo alternando */
-const roles = ['Desenvolvedor de Software', 'Filmmaker & Fotógrafo'];
+const roles = ['Desenvolvedor de Software', 'Filmmaker & Fotógrafo', 'Designer e Criador Digital'];
 const typed = document.getElementById('typed');
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+if (!calm) {
   let r = 0, c = roles[0].length, del = true;
   setTimeout(function tick() {
     const word = roles[r];
@@ -265,8 +331,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 } else {
   typed.textContent = 'Desenvolvedor de Software | Filmmaker & Fotógrafo';
 }
-
-document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
