@@ -477,3 +477,44 @@ footer{border-top:1px solid var(--border);padding:28px 0 calc(28px + env(safe-ar
 @media(min-width:1001px) and (max-height:800px){
   .projects-page .media{width:min(calc(100% - 32px),calc((100svh - 430px)*1.6));margin-right:0}
 }
+
+/* O painel reserva espaço real para legenda e links dentro da área visível. */
+@media(min-width:1001px){
+  .projects-page .side{align-self:start;height:100dvh;padding:96px 0 24px;display:grid;grid-template-rows:auto minmax(0,1fr);gap:18px}
+  .projects-page .media{width:auto;margin:0 32px 0 0;height:100%;max-height:100%;min-height:0;display:grid;grid-template-rows:30px minmax(0,1fr) auto;align-self:end;border-bottom:1px solid var(--border);border-radius:0 20px 20px 0}
+  .projects-page .project-preview{height:100%;min-height:0;max-height:none;aspect-ratio:auto}
+  .projects-page .media .cap{min-width:0;overflow-wrap:anywhere}
+  .projects-page footer{position:relative;clear:both;background:color-mix(in srgb,var(--bg) 86%,var(--project-color));padding-block:32px}
+}
+/* Em janelas muito baixas, o painel acompanha o fluxo normal da página. */
+@media(min-width:1001px) and (max-height:600px){
+  .projects-page .side{position:relative;height:auto;grid-template-rows:auto auto}
+  .projects-page .media{height:auto;max-height:none;grid-template-rows:30px auto auto}
+  .projects-page .project-preview{height:auto;aspect-ratio:16/10}
+}
+@media(min-width:1001px){
+  .projects-page .side{grid-template-columns:minmax(0,1fr);justify-content:normal}
+}
+
+/* Mais área para a captura, sem comprimir a descrição nem invadir o rodapé. */
+@media(min-width:1001px){
+  .projects-page .stage{grid-template-columns:minmax(0,55fr) minmax(0,45fr)}
+  .projects-page .side{padding-top:80px;padding-bottom:16px;gap:12px}
+  .projects-page .side-intro .lead{display:none}
+  .projects-page .side-intro .back{margin-bottom:0;min-height:32px}
+  .projects-page .media{margin-right:24px}
+  .projects-page .media .cap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;padding:16px 24px 18px}
+  .projects-page .media .cap .where,.projects-page .media .cap p{grid-column:1/-1;margin:0;max-width:none}
+  .projects-page .media .cap .tags{margin:0;align-self:center;gap:6px}
+  .projects-page .media .cap .tag{padding:4px 10px;font-size:.75rem}
+  .projects-page .media .cap .actions{margin:0;align-self:center;gap:8px;justify-content:flex-end}
+  .projects-page .media .cap .actions a{font-size:.83rem;padding:8px 14px}
+  .projects-page .list{padding-left:16px;padding-right:4vw}
+}
+@media(min-width:1001px) and (max-width:1200px){
+  .projects-page .media .cap{grid-template-columns:1fr}
+  .projects-page .media .cap .actions{justify-content:flex-start}
+}
+@media(min-width:1001px){
+  .projects-page .media .cap{min-height:var(--caption-height,0px);align-content:start}
+}
